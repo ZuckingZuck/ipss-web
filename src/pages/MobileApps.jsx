@@ -6,9 +6,27 @@ const MobileApps = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-32 px-4 overflow-hidden">
+        {/* Video Arka Planı */}
+        <div className="absolute inset-0">
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="/mobil.mov" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        {/* Gradient Arka Plan */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiA0MmMwIDMuMzEzLTIuNjg3IDYtNiA2cy02LTIuNjg3LTYtNiAyLjY4Ny02IDYtNiA2IDIuNjg3IDYgNnoiIGZpbGw9IiM2NjYiIGZpbGwtb3BhY2l0eT0iLjAyIi8+PC9nPjwvc3ZnPg==')] opacity-20" />
-        
+
+        {/* Koyu Opak Katman */}
+        <div className="absolute inset-0 bg-black opacity-40" />
+
+        {/* İçerik */}
         <div className="relative z-10 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -21,7 +39,7 @@ const MobileApps = () => {
             <p className="text-2xl text-gray-300 mb-8 max-w-3xl">
               iOS ve Android platformları için modern, kullanıcı dostu ve yüksek performanslı mobil uygulamalar geliştiriyoruz. İşletmenizi mobil dünyaya taşıyoruz.
             </p>
-            <Link 
+            <Link
               to="/"
               className="inline-block px-8 py-4 border border-purple-500 rounded-lg hover:bg-purple-500/10 transition-all"
             >
@@ -30,6 +48,7 @@ const MobileApps = () => {
           </motion.div>
         </div>
       </section>
+
 
       {/* Features Section */}
       <section className="py-20 px-4">
@@ -43,37 +62,37 @@ const MobileApps = () => {
                 title: 'iOS Uygulamaları',
                 description: 'Swift ve Objective-C ile geliştirilen, App Store standartlarına uygun iOS uygulamaları. Modern tasarım ve yüksek performans ile kullanıcı deneyimini en üst seviyeye çıkarıyoruz.',
                 icon: '📱',
-                image: '/images/ios-apps.jpg'
+                image: 'https://images.unsplash.com/photo-1657032633395-1cb34612f86d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Android Uygulamaları',
                 description: 'Kotlin ve Java ile geliştirilen, Google Play standartlarına uygun Android uygulamaları. Material Design prensipleri ile kullanıcı dostu arayüzler tasarlıyoruz.',
                 icon: '📱',
-                image: '/images/android-apps.jpg'
+                image: 'https://images.unsplash.com/photo-1694878982190-6e37aa9eb306?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Cross-Platform Uygulamalar',
                 description: 'React Native ve Flutter ile geliştirilen, hem iOS hem de Android platformlarında çalışan uygulamalar. Tek kod tabanı ile maliyetleri düşürüyor, geliştirme sürecini hızlandırıyoruz.',
                 icon: '🔄',
-                image: '/images/cross-platform.jpg'
+                image: 'https://plus.unsplash.com/premium_photo-1720287601300-cf423c3d6760?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Mobil Oyunlar',
                 description: 'Unity ve Unreal Engine ile geliştirilen, yüksek performanslı mobil oyunlar. 2D ve 3D grafikler, fizik motorları ve çoklu oyuncu desteği ile etkileyici oyun deneyimleri sunuyoruz.',
                 icon: '🎮',
-                image: '/images/mobile-games.jpg'
+                image: 'https://images.unsplash.com/photo-1626686707291-7bda5c45e8a8?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Mobil E-ticaret',
                 description: 'Online alışveriş deneyimini mobil platformlara taşıyan e-ticaret uygulamaları. Güvenli ödeme sistemleri, ürün yönetimi ve müşteri ilişkileri yönetimi ile satışlarınızı artırıyoruz.',
                 icon: '🛒',
-                image: '/images/mobile-ecommerce.jpg'
+                image: 'https://plus.unsplash.com/premium_photo-1683288295826-9c0bfba5d10b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Mobil Güvenlik',
                 description: 'Uygulama güvenliği, veri şifreleme ve kimlik doğrulama sistemleri ile mobil uygulamalarınızı koruyoruz. OWASP standartlarına uygun güvenlik önlemleri ile verilerinizi güvende tutuyoruz.',
                 icon: '🔒',
-                image: '/images/mobile-security.jpg'
+                image: 'https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?q=80&w=1630&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               }
             ].map((feature, index) => (
               <motion.div
@@ -92,8 +111,8 @@ const MobileApps = () => {
                 </h3>
                 <p className="text-gray-400 mb-4">{feature.description}</p>
                 <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
-                  <img 
-                    src={feature.image} 
+                  <img
+                    src={feature.image}
                     alt={feature.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -177,7 +196,7 @@ const MobileApps = () => {
           <p className="text-xl text-gray-300 mb-8">
             İşletmeniz için özel mobil uygulama çözümleri geliştirmek için bizimle iletişime geçin
           </p>
-          <a 
+          <a
             href="mailto:fix@ipsstech.com.tr"
             className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
           >

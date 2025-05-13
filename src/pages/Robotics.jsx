@@ -6,9 +6,27 @@ const Robotics = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-32 px-4 overflow-hidden">
+        {/* Video Arka Planı */}
+        <div className="absolute inset-0">
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="/robotics.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        {/* Gradient Arka Plan */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiA0MmMwIDMuMzEzLTIuNjg3IDYtNiA2cy02LTIuNjg3LTYtNiAyLjY4Ny02IDYtNiA2IDIuNjg3IDYgNnoiIGZpbGw9IiM2NjYiIGZpbGwtb3BhY2l0eT0iLjAyIi8+PC9nPjwvc3ZnPg==')] opacity-20" />
-        
+
+        {/* Koyu Arka Plan */}
+        <div className="absolute inset-0 bg-black opacity-40" />
+
+        {/* İçerik */}
         <div className="relative z-10 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -21,7 +39,7 @@ const Robotics = () => {
             <p className="text-2xl text-gray-300 mb-8 max-w-3xl">
               Endüstriyel ve ticari robotik sistemler ile üretim süreçlerinizi optimize ediyoruz. Modern robotik teknolojilerle işletmenizin verimliliğini artırıyor, maliyetleri düşürüyor ve rekabet gücünüzü artırıyoruz.
             </p>
-            <Link 
+            <Link
               to="/"
               className="inline-block px-8 py-4 border border-purple-500 rounded-lg hover:bg-purple-500/10 transition-all"
             >
@@ -30,6 +48,10 @@ const Robotics = () => {
           </motion.div>
         </div>
       </section>
+
+
+
+
 
       {/* Features Section */}
       <section className="py-20 px-4">
@@ -43,37 +65,37 @@ const Robotics = () => {
                 title: 'Endüstriyel Robotlar',
                 description: 'Üretim hatlarında kullanılan, yüksek hassasiyetli endüstriyel robotlar. Kaynak, montaj, boyama ve malzeme taşıma gibi işlemlerde kullanılan, programlanabilir ve esnek robotik sistemler.',
                 icon: '🤖',
-                image: '/images/industrial-robots.jpg'
+                image: 'https://images.unsplash.com/photo-1647427060118-4911c9821b82?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Kolaboratif Robotlar (Cobotlar)',
                 description: 'İnsanlarla güvenli bir şekilde çalışabilen cobot sistemleri. Güvenlik sensörleri ve yumuşak dokunuş teknolojileri ile donatılmış, insan-robot işbirliğine uygun robotik çözümler.',
                 icon: '🤝',
-                image: '/images/cobots.jpg'
+                image: 'https://images.unsplash.com/photo-1589254047589-db4c14ad7779?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Otonom Mobil Robotlar (AMR)',
                 description: 'Depo ve lojistik operasyonları için otonom mobil robotlar. LIDAR ve kamera sistemleri ile donatılmış, çevresini algılayabilen ve otonom hareket edebilen mobil robotik sistemler.',
                 icon: '🚀',
-                image: '/images/amr.jpg'
+                image: 'https://plus.unsplash.com/premium_photo-1682124389443-faa964f770c9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Robotik Proses Otomasyonu (RPA)',
                 description: 'Üretim süreçlerini otomatikleştiren robotik sistemler. Veri toplama, analiz ve raporlama süreçlerini otomatikleştiren, hata oranını minimize eden akıllı sistemler.',
                 icon: '⚙️',
-                image: '/images/rpa.jpg'
+                image: 'https://plus.unsplash.com/premium_photo-1682144729399-061e5c50d8df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Robotik Görü Sistemleri',
                 description: 'Robotlar için görüntü işleme ve nesne tanıma sistemleri. Yapay zeka destekli görüntü analizi ile nesneleri tanıyan, sınıflandıran ve konumlandıran akıllı sistemler.',
                 icon: '👁️',
-                image: '/images/vision-systems.jpg'
+                image: 'https://images.unsplash.com/photo-1640455100299-60ccc3dbfb74?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Robotik Kontrol Sistemleri',
                 description: 'Robot hareketlerini kontrol eden ve optimize eden sistemler. Gerçek zamanlı kontrol ve optimizasyon algoritmaları ile robot hareketlerini hassas bir şekilde yöneten sistemler.',
                 icon: '🎮',
-                image: '/images/control-systems.jpg'
+                image: 'https://images.unsplash.com/photo-1591833255191-c42cf1b749f0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               }
             ].map((feature, index) => (
               <motion.div
@@ -92,8 +114,8 @@ const Robotics = () => {
                 </h3>
                 <p className="text-gray-400 mb-4">{feature.description}</p>
                 <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
-                  <img 
-                    src={feature.image} 
+                  <img
+                    src={feature.image}
                     alt={feature.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -177,7 +199,7 @@ const Robotics = () => {
           <p className="text-xl text-gray-300 mb-8">
             İşletmeniz için özel robotik çözümler geliştirmek için bizimle iletişime geçin
           </p>
-          <a 
+          <a
             href="mailto:fix@ipsstech.com.tr"
             className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
           >

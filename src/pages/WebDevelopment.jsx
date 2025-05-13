@@ -6,10 +6,28 @@ const WebDevelopment = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-32 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiA0MmMwIDMuMzEzLTIuNjg3IDYtNiA2cy02LTIuNjg3LTYtNiAyLjY4Ny02IDYtNiA2IDIuNjg3IDYgNnoiIGZpbGw9IiM2NjYiIGZpbGwtb3BhY2l0eT0iLjAyIi8+PC9nPjwvc3ZnPg==')] opacity-20" />
-        
-        <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Video Arka Planı */}
+        <div className="absolute inset-0">
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="/web.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        {/* Gradient Arka Plan */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20 z-10" />
+
+        {/* Koyu arka plan */}
+        <div className="absolute inset-0 bg-black opacity-40 z-20" />  {/* Koyu ve transparan katman */}
+
+        {/* İçerik */}
+        <div className="relative z-30 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -21,7 +39,7 @@ const WebDevelopment = () => {
             <p className="text-2xl text-gray-300 mb-8 max-w-3xl">
               Modern web teknolojileri ile özel yazılım çözümleri geliştiriyoruz. Kullanıcı dostu, performanslı ve güvenli web uygulamaları ile işletmenizin dijital varlığını güçlendiriyoruz.
             </p>
-            <Link 
+            <Link
               to="/"
               className="inline-block px-8 py-4 border border-purple-500 rounded-lg hover:bg-purple-500/10 transition-all"
             >
@@ -30,6 +48,8 @@ const WebDevelopment = () => {
           </motion.div>
         </div>
       </section>
+
+
 
       {/* Features Section */}
       <section className="py-20 px-4">
@@ -43,37 +63,37 @@ const WebDevelopment = () => {
                 title: 'Frontend Geliştirme',
                 description: 'React, Vue.js ve Angular gibi modern frameworkler ile kullanıcı dostu, responsive ve performanslı web arayüzleri geliştiriyoruz. Progressive Web Apps (PWA) ve Single Page Applications (SPA) ile kullanıcı deneyimini en üst seviyeye çıkarıyoruz.',
                 icon: '💻',
-                image: '/images/frontend.jpg'
+                image: 'https://images.unsplash.com/photo-1593720213428-28a5b9e94613?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Backend Geliştirme',
                 description: 'Node.js, Python, Java ve .NET gibi teknolojiler ile güvenli, ölçeklenebilir ve yüksek performanslı backend sistemleri geliştiriyoruz. RESTful API ve GraphQL servisleri ile veri yönetimini optimize ediyoruz.',
                 icon: '⚙️',
-                image: '/images/backend.jpg'
+                image: 'https://images.unsplash.com/photo-1536104968055-4d61aa56f46a?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'E-ticaret Çözümleri',
                 description: 'Magento, WooCommerce ve özel e-ticaret platformları ile online satış kanallarınızı güçlendiriyoruz. Ödeme sistemleri entegrasyonu, stok yönetimi ve müşteri ilişkileri yönetimi ile e-ticaret süreçlerinizi optimize ediyoruz.',
                 icon: '🛒',
-                image: '/images/ecommerce.jpg'
+                image: 'https://plus.unsplash.com/premium_photo-1672883552341-eaebc9240719?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Kurumsal Web Siteleri',
                 description: 'Modern tasarım ve SEO uyumlu kurumsal web siteleri geliştiriyoruz. İçerik yönetim sistemleri (CMS) ile web sitenizi kolayca yönetebilir, güncelleyebilir ve optimize edebilirsiniz.',
                 icon: '🏢',
-                image: '/images/corporate.jpg'
+                image: 'https://plus.unsplash.com/premium_photo-1661389260743-babc1591dcf7?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Web Uygulamaları',
                 description: 'Özel ihtiyaçlarınıza yönelik web uygulamaları geliştiriyoruz. Kullanıcı yönetimi, veri analizi, raporlama ve entegrasyon özellikleri ile iş süreçlerinizi dijitalleştiriyoruz.',
                 icon: '📱',
-                image: '/images/webapps.jpg'
+                image: 'https://plus.unsplash.com/premium_photo-1720903984809-62de3f4ca814?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Web Güvenliği',
                 description: 'SSL sertifikaları, güvenlik duvarları ve güvenlik testleri ile web uygulamalarınızı koruyoruz. OWASP standartlarına uygun güvenlik önlemleri ile verilerinizi güvende tutuyoruz.',
                 icon: '🔒',
-                image: '/images/security.jpg'
+                image: 'https://plus.unsplash.com/premium_photo-1700681802465-63aae555de29?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               }
             ].map((feature, index) => (
               <motion.div
@@ -92,8 +112,8 @@ const WebDevelopment = () => {
                 </h3>
                 <p className="text-gray-400 mb-4">{feature.description}</p>
                 <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
-                  <img 
-                    src={feature.image} 
+                  <img
+                    src={feature.image}
                     alt={feature.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -177,7 +197,7 @@ const WebDevelopment = () => {
           <p className="text-xl text-gray-300 mb-8">
             İşletmeniz için özel web çözümleri geliştirmek için bizimle iletişime geçin
           </p>
-          <a 
+          <a
             href="mailto:fix@ipsstech.com.tr"
             className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
           >

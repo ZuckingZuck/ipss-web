@@ -1,43 +1,88 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Home = () => {
+  const navigate = useNavigate();
+  const smoothScrollToTop = (duration) => {
+  const start = window.scrollY;
+  const startTime = performance.now();
+
+  const scroll = (timestamp) => {
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    window.scrollTo(0, start * (1 - progress)); // Kaydırma
+    if (progress < 1) {
+      requestAnimationFrame(scroll);
+    }
+  };
+  
+  requestAnimationFrame(scroll);
+};
+
+const handleNavigation = (path) => {
+  navigate(path);  // Sayfaya yönlendirme
+  smoothScrollToTop(500);  // 1500 ms süresince animasyonlu kaydırma
+};
+
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-32 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiA0MmMwIDMuMzEzLTIuNjg3IDYtNiA2cy02LTIuNjg3LTYtNiAyLjY4Ny02IDYtNiA2IDIuNjg3IDYgNnoiIGZpbGw9IiM2NjYiIGZpbGwtb3BhY2l0eT0iLjAyIi8+PC9nPjwvc3ZnPg==')] opacity-20" />
-        
-        <div className="relative z-10 max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
-              IPSS TECH
-            </h1>
-            <p className="text-2xl text-gray-300 mb-8 max-w-3xl">
-              Modern teknolojilerle işletmenizi geleceğe taşıyoruz. Web yazılımları, otomasyon sistemleri, görüntü işleme, mobil uygulamalar, robotik ve yapay zeka çözümleri ile iş süreçlerinizi optimize ediyoruz.
-            </p>
-            <div className="flex gap-4">
-              <a 
-                href="mailto:fix@ipsstech.com.tr"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
-              >
-                İletişime Geç
-              </a>
-              <Link 
-                to="/about"
-                className="inline-block px-8 py-4 border border-purple-500 rounded-lg hover:bg-purple-500/10 transition-all"
-              >
-                Hakkımızda
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+  {/* Video Arka Planı */}
+  <div className="absolute inset-0">
+    <video
+      className="absolute inset-0 w-full h-full object-cover"
+      autoPlay
+      muted
+      loop
+      playsInline
+    >
+      <source src="/bg.mov" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  {/* Gradient Arka Plan */}
+  <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20 z-10" />
+
+  {/* Koyu arka plan */}
+  <div className="absolute inset-0 bg-black opacity-40 z-20" />  {/* Koyu ve transparan katman */}
+
+  {/* İçerik */}
+  <div className="relative z-30 max-w-6xl mx-auto">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
+        IPSS TECH
+      </h1>
+      <p className="text-2xl text-gray-300 mb-8 max-w-3xl">
+        Modern teknolojilerle işletmenizi geleceğe taşıyoruz. Web yazılımları, otomasyon sistemleri, görüntü işleme, mobil uygulamalar, robotik ve yapay zeka çözümleri ile iş süreçlerinizi optimize ediyoruz.
+      </p>
+      <div className="flex gap-4">
+        <a
+          href="mailto:fix@ipsstech.com.tr"
+          className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+        >
+          İletişime Geç
+        </a>
+        <Link
+          to="/about"
+          className="inline-block px-8 py-4 border border-purple-500 rounded-lg hover:bg-purple-500/10 transition-all"
+        >
+          Hakkımızda
+        </Link>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+
+
+
+
 
       {/* About Section */}
       <section className="py-20 px-4">
@@ -139,12 +184,12 @@ const Home = () => {
                   {service.title}
                 </h3>
                 <p className="text-gray-400 mb-4">{service.description}</p>
-                <Link 
-                  to={service.link}
-                  className="inline-block px-4 py-2 border border-purple-500 rounded-lg hover:bg-purple-500/10 transition-all"
+                <button
+                  onClick={() => { handleNavigation(service.link) }}
+                  className="inline-block hover:cursor-pointer px-4 py-2 border border-purple-500 rounded-lg hover:bg-purple-500/10 transition-all"
                 >
                   Detaylı Bilgi
-                </Link>
+                </button>
               </motion.div>
             ))}
           </div>
@@ -160,29 +205,30 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                title: 'Akıllı Fabrika Otomasyonu',
-                description: 'Büyük ölçekli bir üretim tesisinde robotik sistemler ve yapay zeka destekli kalite kontrol sistemi entegrasyonu.',
-                image: '/images/smart-factory.jpg',
-                category: 'Otomasyon & Robotik'
+                title: 'Aycell ERP',
+                description: 'Aycell Bilişim, telekomünikasyon sektöründe kurulum, bakım ve işletme hizmetlerinde, iş süreçlerini daha verimli yönetmek için geliştirdiğimiz ERP çözümünü kullanarak, çözüm ortaklıklarıyla müşterilerine zamanında ve etkili hizmet sunmaktadır.',
+                image: 'http://www.aycell.com.tr/Gorseller/Aycell.png',
+                category: 'İş Yönetimi'
               },
               {
                 title: 'Mobil E-ticaret Platformu',
                 description: 'iOS ve Android için geliştirilen, yapay zeka destekli öneri sistemi içeren mobil alışveriş uygulaması.',
-                image: '/images/mobile-ecommerce.jpg',
+                image: 'https://www.pngplay.com/wp-content/uploads/6/Mobile-Application-Icon-Transparent-PNG.png',
                 category: 'Mobil Uygulamalar'
               },
               {
                 title: 'Görüntü İşleme Sistemi',
                 description: 'Üretim hattında otomatik kalite kontrol ve hata tespiti yapan yapay zeka destekli görüntü işleme sistemi.',
-                image: '/images/image-processing.jpg',
+                image: 'https://png.pngtree.com/png-vector/20230327/ourmid/pngtree-process-flat-icon-vector-png-image_6670690.png',
                 category: 'Görüntü İşleme'
               },
               {
-                title: 'Web Tabanlı ERP Sistemi',
-                description: 'Modern web teknolojileri ile geliştirilen, iş süreçlerini optimize eden kurumsal kaynak planlama sistemi.',
-                image: '/images/erp-system.jpg',
-                category: 'Web Yazılımları'
+                title: 'Yapay Zeka Çözümleri',
+                description: 'Gelişmiş yapay zeka teknolojileri ile iş süreçlerini dönüştüren, verimliliği artıran ve stratejik karar almayı kolaylaştıran yenilikçi yazılım çözümleri.',
+                image: 'https://png.pngtree.com/png-vector/20230915/ourmid/pngtree-artificial-intelligence-modern-computing-concept-png-image_10074799.png',
+                category: 'Yapay Zeka Yazılımları'
               }
+
             ].map((project, index) => (
               <motion.div
                 key={index}
@@ -193,10 +239,10 @@ const Home = () => {
                 className="group rounded-xl overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-purple-500 transition-all"
               >
                 <div className="relative h-64">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -224,7 +270,7 @@ const Home = () => {
           <p className="text-xl text-gray-300 mb-8">
             İşletmeniz için özel yazılım çözümleri geliştirmek için bizimle iletişime geçin
           </p>
-          <a 
+          <a
             href="mailto:fix@ipsstech.com.tr"
             className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
           >

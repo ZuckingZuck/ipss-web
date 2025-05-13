@@ -6,9 +6,27 @@ const ImageProcessing = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-32 px-4 overflow-hidden">
+        {/* Video Arka Planı */}
+        <div className="absolute inset-0">
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="/eye.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        {/* Gradient Arka Plan */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiA0MmMwIDMuMzEzLTIuNjg3IDYtNiA2cy02LTIuNjg3LTYtNiAyLjY4Ny02IDYtNiA2IDIuNjg3IDYgNnoiIGZpbGw9IiM2NjYiIGZpbGwtb3BhY2l0eT0iLjAyIi8+PC9nPjwvc3ZnPg==')] opacity-20" />
-        
+
+        {/* Koyu Opak Arka Plan */}
+        <div className="absolute inset-0 bg-black opacity-40" />
+
+        {/* İçerik */}
         <div className="relative z-10 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -21,7 +39,7 @@ const ImageProcessing = () => {
             <p className="text-2xl text-gray-300 mb-8 max-w-3xl">
               Yapay zeka destekli görüntü ve ses analiz sistemleri ile işletmenizin verimliliğini artırın. Modern teknolojilerle görüntü ve ses verilerinizi anlamlı bilgilere dönüştürüyoruz.
             </p>
-            <Link 
+            <Link
               to="/"
               className="inline-block px-8 py-4 border border-purple-500 rounded-lg hover:bg-purple-500/10 transition-all"
             >
@@ -30,6 +48,7 @@ const ImageProcessing = () => {
           </motion.div>
         </div>
       </section>
+
 
       {/* Features Section */}
       <section className="py-20 px-4">
@@ -43,37 +62,37 @@ const ImageProcessing = () => {
                 title: 'Nesne Tanıma ve Sınıflandırma',
                 description: 'Görüntülerdeki nesneleri tanıyan ve sınıflandıran yapay zeka sistemleri. Derin öğrenme modelleri ile nesneleri otomatik olarak tespit ediyor ve kategorize ediyoruz.',
                 icon: '🔍',
-                image: '/images/object-detection.jpg'
+                image: 'https://images.unsplash.com/photo-1602042954239-313e7a40c1f3?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Yüz Tanıma Sistemleri',
                 description: 'Güvenlik ve kimlik doğrulama için gelişmiş yüz tanıma teknolojileri. Yapay zeka destekli yüz analizi ile güvenlik sistemlerinizi güçlendiriyoruz.',
                 icon: '👤',
-                image: '/images/face-recognition.jpg'
+                image: 'https://images.unsplash.com/photo-1654430343142-2d6157e69887?q=80&w=1408&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Ses Tanıma ve İşleme',
                 description: 'Ses komutlarını anlayan ve işleyen akıllı sistemler. Doğal dil işleme teknolojileri ile ses verilerinizi analiz ediyor ve anlamlandırıyoruz.',
                 icon: '🎤',
-                image: '/images/speech-recognition.jpg'
+                image: 'https://images.unsplash.com/photo-1668361293649-2abf3f7a132c?q=80&w=1415&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Görüntü İyileştirme',
                 description: 'Düşük kaliteli görüntüleri yapay zeka ile iyileştiren sistemler. Görüntü kalitesini artıran, gürültüyü azaltan ve detayları belirginleştiren çözümler sunuyoruz.',
                 icon: '🖼️',
-                image: '/images/image-enhancement.jpg'
+                image: 'https://images.unsplash.com/photo-1649673593612-28be60dbb59d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Video Analizi',
                 description: 'Video akışlarını analiz eden, anomali tespiti yapan sistemler. Hareket analizi, nesne takibi ve olay tespiti ile güvenlik sistemlerinizi güçlendiriyoruz.',
                 icon: '🎥',
-                image: '/images/video-analysis.jpg'
+                image: 'https://images.unsplash.com/photo-1682506457554-b34c9682e985?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               },
               {
                 title: 'Ses Sentezi',
                 description: 'Metin konuşmaya dönüştüren, doğal ses sentezi yapan sistemler. Yapay zeka destekli ses sentezi ile kullanıcı deneyimini zenginleştiriyoruz.',
                 icon: '🗣️',
-                image: '/images/voice-synthesis.jpg'
+                image: 'https://images.unsplash.com/photo-1617994452722-4145e196248b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               }
             ].map((feature, index) => (
               <motion.div
@@ -92,8 +111,8 @@ const ImageProcessing = () => {
                 </h3>
                 <p className="text-gray-400 mb-4">{feature.description}</p>
                 <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
-                  <img 
-                    src={feature.image} 
+                  <img
+                    src={feature.image}
                     alt={feature.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -177,7 +196,7 @@ const ImageProcessing = () => {
           <p className="text-xl text-gray-300 mb-8">
             İşletmeniz için özel görüntü ve ses işleme çözümleri geliştirmek için bizimle iletişime geçin
           </p>
-          <a 
+          <a
             href="mailto:fix@ipsstech.com.tr"
             className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
           >
