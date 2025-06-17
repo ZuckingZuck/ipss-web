@@ -207,7 +207,7 @@ const handleNavigation = (path) => {
               {
                 title: 'Aycell ERP',
                 description: 'Aycell Bilişim, telekomünikasyon sektöründe kurulum, bakım ve işletme hizmetlerinde, iş süreçlerini daha verimli yönetmek için geliştirdiğimiz ERP çözümünü kullanarak, çözüm ortaklıklarıyla müşterilerine zamanında ve etkili hizmet sunmaktadır.',
-                image: 'http://www.aycell.com.tr/Gorseller/Aycell.png',
+                image: '/Aycell.png',
                 category: 'İş Yönetimi'
               },
               {
