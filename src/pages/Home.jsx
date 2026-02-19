@@ -3,6 +3,84 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const Home = () => {
   const navigate = useNavigate();
+  const services = [
+    {
+      title: 'İnternet ve Altyapı',
+      description: 'FTTx, FTTB dönüşüm, POP ve güzergâh bakım çalışmalarıyla güçlü altyapı çözümleri sunuyoruz.',
+      icon: '📡',
+      link: '/internet-ve-altyapi'
+    },
+    {
+      title: 'Sinyalizasyon ve Ağır Bakım',
+      description: 'Belediye projelerinde sinyalizasyon, mobil EDS, trafik ve ağır bakım süreçlerini yönetiyoruz.',
+      icon: '🚦',
+      link: '/sinyalizasyon-ve-agir-bakim'
+    },
+    {
+      title: 'Makine ve Teçhizat',
+      description: '16 saha ekibi ve güçlü ekipman envanteriyle eş zamanlı, kesintisiz saha imalatı sağlıyoruz.',
+      icon: '🛠️',
+      link: '/makine-ve-techizat'
+    },
+    {
+      title: 'Web Yazılımları',
+      description: 'Modern web teknolojileri ile özel yazılım çözümleri geliştiriyoruz.',
+      icon: '🌐',
+      link: '/web-development'
+    },
+    {
+      title: 'Görüntü İşleme',
+      description: 'Yapay zeka destekli görüntü ve ses analiz sistemleri geliştiriyoruz.',
+      icon: '👁️',
+      link: '/image-processing'
+    },
+    {
+      title: 'Robotik',
+      description: 'Endüstriyel ve ticari robotik sistemler ile üretim süreçlerini optimize ediyoruz.',
+      icon: '🤖',
+      link: '/robotics'
+    },
+    {
+      title: 'Yapay Zeka',
+      description: 'Makine öğrenmesi ve derin öğrenme teknolojileri ile akıllı çözümler.',
+      icon: '🧠',
+      link: '/ai'
+    }
+  ]
+
+  const highlights = [
+    { label: 'Deplase', value: '12.600' },
+    { label: 'Fibersite', value: '630' },
+    { label: 'Kurumsal Firma', value: '920' },
+    { label: 'Backbone Kazı', value: '92 km' },
+    { label: 'HomePass Altyapı', value: '114.000' },
+    { label: 'FTTB Dönüşüm', value: '32.000' },
+    { label: 'Güzergâh Kazı', value: '480 km' },
+    { label: 'Bakım Çalışması', value: '1.600 km' },
+  ]
+
+  const aboutCards = [
+    {
+      title: 'Saha ve Operasyon Yetkinliği',
+      description: 'Altyapı, sinyalizasyon ve ağır bakım projelerinde planlı, hızlı ve sürdürülebilir saha operasyonları yürütüyoruz.'
+    },
+    {
+      title: 'Mühendislik ve Teknoloji Birikimi',
+      description: 'Web, yapay zeka, görüntü işleme ve robotik çözümleri saha tecrübesiyle birleştirerek uçtan uca değer üretiyoruz.'
+    },
+    {
+      title: 'Güvenilir İş Ortaklığı',
+      description: 'Kamu ve özel sektör projelerinde kaliteli teslimat, şeffaf süreç yönetimi ve uzun vadeli destek yaklaşımı sunuyoruz.'
+    },
+  ]
+
+  const partnerLogos = [
+    { name: 'Türknet', src: '/turknet.jpg' },
+    { name: 'Turkcell', src: '/turkcell.png' },
+    { name: 'Atom', src: '/atom.png' },
+    { name: 'İBB', src: '/ibb.png' },
+  ]
+
   const smoothScrollToTop = (duration) => {
   const start = window.scrollY;
   const startTime = performance.now();
@@ -59,7 +137,7 @@ const handleNavigation = (path) => {
         IPSS TECH
       </h1>
       <p className="text-2xl text-gray-300 mb-8 max-w-3xl">
-        Modern teknolojilerle işletmenizi geleceğe taşıyoruz. Web yazılımları, otomasyon sistemleri, görüntü işleme, mobil uygulamalar, robotik ve yapay zeka çözümleri ile iş süreçlerinizi optimize ediyoruz.
+        Modern teknolojilerle işletmenizi geleceğe taşıyoruz. İnternet ve Altyapı, Sinyalizasyon ve Ağır Bakım, Makine ve Teçhizat alanlarında güçlü saha operasyonlarımızı; web yazılımları, görüntü işleme, robotik ve yapay zeka çözümleriyle entegre biçimde sunuyoruz.
       </p>
       <div className="flex gap-4">
         <a
@@ -69,15 +147,41 @@ const handleNavigation = (path) => {
           İletişime Geç
         </a>
         <Link
-          to="/about"
+          to="/internet-ve-altyapi"
           className="inline-block px-8 py-4 border border-purple-500 rounded-lg hover:bg-purple-500/10 transition-all"
         >
-          Hakkımızda
+          Saha Çözümlerimiz
         </Link>
       </div>
     </motion.div>
   </div>
 </section>
+
+
+      <section className="py-14 px-4 bg-gray-900/80 border-y border-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
+            Çalışma Ortaklarımız
+          </h2>
+          <div className="partner-marquee">
+            <div className="partner-track">
+              {[...partnerLogos, ...partnerLogos].map((logo, index) => (
+                <div
+                  key={`${logo.name}-${index}`}
+                  className="partner-logo-item"
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.name}
+                    className="h-14 md:h-16 w-auto object-contain opacity-90"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
 
 
@@ -90,36 +194,49 @@ const handleNavigation = (path) => {
           <h2 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
             Hakkımızda
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="p-8 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700"
-            >
-              <h3 className="text-2xl font-semibold mb-4 text-purple-400">Biz Kimiz?</h3>
-              <p className="text-gray-300 mb-4">
-                IPSS TECH olarak, 2015 yılından bu yana teknoloji dünyasında yenilikçi çözümler sunuyoruz. Uzman ekibimiz ve geniş deneyimimizle, işletmelerin dijital dönüşüm süreçlerinde güvenilir bir partner olarak hizmet veriyoruz.
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="p-8 rounded-2xl bg-gradient-to-r from-gray-800/70 to-gray-900/70 backdrop-blur-sm border border-gray-700 mb-10"
+          >
+            <p className="text-sm uppercase tracking-wider text-purple-300 mb-3">Biz Kimiz?</p>
+            <p className="text-lg text-gray-200 leading-relaxed mb-4">
+              IPSS TECH olarak altyapı, sinyalizasyon, ağır bakım ve ileri teknoloji çözümlerini tek çatı altında sunan çok disiplinli bir mühendislik ve uygulama ekibiyiz.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              Saha operasyon gücümüzü yazılım ve yapay zeka kabiliyetiyle birleştirerek kurumların dijital dönüşüm, altyapı modernizasyonu ve operasyonel verimlilik hedeflerine doğrudan katkı sağlıyoruz.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {aboutCards.map((card, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="p-6 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-purple-500 transition-all"
+              >
+                <h3 className="text-xl font-semibold mb-3 text-purple-300">{card.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{card.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-6 rounded-xl border border-gray-700 bg-gray-900/50">
+              <h3 className="text-xl font-semibold mb-3 text-purple-300">Misyonumuz</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Yenilikçi, sürdürülebilir ve ölçülebilir teknoloji çözümleriyle iş süreçlerini iyileştirmek; kurumlara hız, verimlilik ve güven kazandırmak.
               </p>
-              <p className="text-gray-300">
-                Müşteri odaklı yaklaşımımız ve kaliteli hizmet anlayışımızla, her projede en iyi sonuçları elde etmek için çalışıyoruz. Modern teknolojileri kullanarak, işletmelerin rekabet gücünü artırmayı ve sürdürülebilir büyümeyi hedefliyoruz.
+            </div>
+            <div className="p-6 rounded-xl border border-gray-700 bg-gray-900/50">
+              <h3 className="text-xl font-semibold mb-3 text-purple-300">Vizyonumuz</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Türkiye’de saha operasyonları ve ileri teknoloji uygulamalarını entegre sunabilen öncü ve güvenilir çözüm markası olmak.
               </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="p-8 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700"
-            >
-              <h3 className="text-2xl font-semibold mb-4 text-purple-400">Misyonumuz</h3>
-              <p className="text-gray-300 mb-4">
-                İşletmelerin dijital dönüşüm süreçlerinde, yenilikçi ve sürdürülebilir teknoloji çözümleri sunarak, verimliliklerini artırmak ve rekabet güçlerini güçlendirmek.
-              </p>
-              <h3 className="text-2xl font-semibold mb-4 text-purple-400">Vizyonumuz</h3>
-              <p className="text-gray-300">
-                Teknoloji dünyasında öncü ve güvenilir bir marka olarak, müşterilerimize en iyi hizmeti sunmak ve sektörde fark yaratan çözümler geliştirmek.
-              </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -131,44 +248,7 @@ const handleNavigation = (path) => {
             Hizmetlerimiz
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Web Yazılımları',
-                description: 'Modern web teknolojileri ile özel yazılım çözümleri geliştiriyoruz.',
-                icon: '🌐',
-                link: '/web-development'
-              },
-              {
-                title: 'Otomasyon Sistemleri',
-                description: 'İş süreçlerinizi optimize eden akıllı otomasyon çözümleri sunuyoruz.',
-                icon: '⚙️',
-                link: '/automation'
-              },
-              {
-                title: 'Görüntü İşleme',
-                description: 'Yapay zeka destekli görüntü ve ses analiz sistemleri geliştiriyoruz.',
-                icon: '👁️',
-                link: '/image-processing'
-              },
-              {
-                title: 'Mobil Uygulamalar',
-                description: 'iOS ve Android için modern ve kullanıcı dostu mobil uygulamalar.',
-                icon: '📱',
-                link: '/mobile-apps'
-              },
-              {
-                title: 'Robotik',
-                description: 'Endüstriyel ve ticari robotik sistemler ile üretim süreçlerini optimize ediyoruz.',
-                icon: '🤖',
-                link: '/robotics'
-              },
-              {
-                title: 'Yapay Zeka',
-                description: 'Makine öğrenmesi ve derin öğrenme teknolojileri ile akıllı çözümler.',
-                icon: '🧠',
-                link: '/ai'
-              }
-            ].map((service, index) => (
+            {services.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -191,6 +271,25 @@ const handleNavigation = (path) => {
                   Detaylı Bilgi
                 </button>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
+            Saha Performansımız
+          </h2>
+          <p className="text-center text-gray-300 mb-12 max-w-3xl mx-auto">
+            Son dönem altyapı, bakım ve saha operasyon çalışmalarımızdan öne çıkan çıktılar.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {highlights.map((item, index) => (
+              <div key={index} className="p-5 rounded-xl border border-gray-700 bg-gray-800/50 text-center backdrop-blur-sm hover:border-purple-500 transition-all">
+                <p className="text-sm text-purple-300 mb-2">{item.label}</p>
+                <p className="text-3xl font-bold text-white">{item.value}</p>
+              </div>
             ))}
           </div>
         </div>

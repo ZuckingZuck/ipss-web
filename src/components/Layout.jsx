@@ -26,22 +26,25 @@ function Layout({ children }) {
             </button>
             <div className="hidden md:flex space-x-8">
               <button onClick={() => handleNavigation('/web-development')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
-                Web Yazılımları
-              </button>
-              <button onClick={() => handleNavigation('/automation')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
-                Otomasyon
+                Yazılım
               </button>
               <button onClick={() => handleNavigation('/image-processing')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
                 Görüntü İşleme
-              </button>
-              <button onClick={() => handleNavigation('/mobile-apps')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
-                Mobil Uygulamalar
               </button>
               <button onClick={() => handleNavigation('/robotics')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
                 Robotik
               </button>
               <button onClick={() => handleNavigation('/ai')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
                 Yapay Zeka
+              </button>
+              <button onClick={() => handleNavigation('/internet-ve-altyapi')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
+                İnternet ve Altyapı
+              </button>
+              <button onClick={() => handleNavigation('/sinyalizasyon-ve-agir-bakim')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
+                Sinyalizasyon ve Ağır Bakım
+              </button>
+              <button onClick={() => handleNavigation('/makine-ve-techizat')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
+                Makine ve Teçhizat
               </button>
             </div>
           </div>
