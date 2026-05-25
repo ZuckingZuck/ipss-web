@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Automation = () => {
   return (
-    <div className="min-h-screen">
+    <div className="light-page min-h-screen">
       {/* Hero Section */}
       <section className="relative py-32 px-4 overflow-hidden">
         {/* Video Arka Planı */}

@@ -10,7 +10,7 @@ const InternetInfrastructure = () => {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="light-page min-h-screen">
       <section className="relative py-32 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20" />
         <div className="absolute inset-0 bg-black opacity-40" />

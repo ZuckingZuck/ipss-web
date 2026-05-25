@@ -6,13 +6,13 @@
 
 @layer base {
   body {
-    @apply bg-gray-900 text-white;
+    @apply bg-slate-50 text-slate-900;
   }
 }
 
 @layer components {
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-blue-700;
   }
   
   .gradient-border {
@@ -26,11 +26,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-800;
+  @apply bg-slate-100;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-purple-500 to-blue-500 rounded-full;
+  @apply bg-gradient-to-b from-blue-500 to-sky-500 rounded-full;
 }
 
 /* Neon Glow Effect */
@@ -69,7 +69,44 @@
   margin-right: 1.5rem;
   padding: 0.9rem 1.2rem;
   border-radius: 0.9rem;
-  border: 1px solid rgba(59, 130, 246, 0.25);
-  background: rgba(31, 41, 55, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(4px);
+}
+
+.light-page {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.light-page .bg-black.opacity-40,
+.light-page .bg-black.opacity-40.z-20 {
+  background: rgba(255, 255, 255, 0.45) !important;
+  opacity: 1 !important;
+}
+
+.light-page .bg-gray-900\/80,
+.light-page .bg-gray-900\/50,
+.light-page .bg-gray-800\/50,
+.light-page .bg-gray-800\/70,
+.light-page .bg-gray-900\/60 {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.light-page .border-gray-800,
+.light-page .border-gray-700,
+.light-page .border-gray-700\/80 {
+  border-color: #cbd5e1 !important;
+}
+
+.light-page .text-white,
+.light-page .text-gray-300,
+.light-page .text-gray-400,
+.light-page .text-purple-300,
+.light-page .text-purple-400 {
+  color: #0f172a !important;
+}
+
+.light-page .from-gray-900\/80 {
+  --tw-gradient-from: rgba(255, 255, 255, 0.9) var(--tw-gradient-from-position) !important;
 }

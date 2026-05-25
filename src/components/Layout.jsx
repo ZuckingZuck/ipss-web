@@ -17,33 +17,33 @@ function Layout({ children }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-sm border-b border-gray-800">
+    <div className="min-h-screen bg-slate-50 text-slate-900">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-sky-200/95 via-blue-100/95 to-indigo-200/95 backdrop-blur-sm border-b border-blue-300 shadow-md">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <button onClick={() => handleNavigation('/')} className="text-2xl hover:cursor-pointer font-bold gradient-text">
               IPSS TECH
             </button>
             <div className="hidden md:flex space-x-8">
-              <button onClick={() => handleNavigation('/web-development')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
+              <button onClick={() => handleNavigation('/web-development')} className="text-slate-800 font-medium hover:text-blue-800 transition-colors hover:cursor-pointer">
                 Yazılım
               </button>
-              <button onClick={() => handleNavigation('/image-processing')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
+              <button onClick={() => handleNavigation('/image-processing')} className="text-slate-800 font-medium hover:text-blue-800 transition-colors hover:cursor-pointer">
                 Görüntü İşleme
               </button>
-              <button onClick={() => handleNavigation('/robotics')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
+              <button onClick={() => handleNavigation('/robotics')} className="text-slate-800 font-medium hover:text-blue-800 transition-colors hover:cursor-pointer">
                 Robotik
               </button>
-              <button onClick={() => handleNavigation('/ai')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
+              <button onClick={() => handleNavigation('/ai')} className="text-slate-800 font-medium hover:text-blue-800 transition-colors hover:cursor-pointer">
                 Yapay Zeka
               </button>
-              <button onClick={() => handleNavigation('/internet-ve-altyapi')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
+              <button onClick={() => handleNavigation('/internet-ve-altyapi')} className="text-slate-800 font-medium hover:text-blue-800 transition-colors hover:cursor-pointer">
                 İnternet ve Altyapı
               </button>
-              <button onClick={() => handleNavigation('/sinyalizasyon-ve-agir-bakim')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
+              <button onClick={() => handleNavigation('/sinyalizasyon-ve-agir-bakim')} className="text-slate-800 font-medium hover:text-blue-800 transition-colors hover:cursor-pointer">
                 Sinyalizasyon ve Ağır Bakım
               </button>
-              <button onClick={() => handleNavigation('/makine-ve-techizat')} className="hover:text-purple-400 transition-colors hover:cursor-pointer">
+              <button onClick={() => handleNavigation('/makine-ve-techizat')} className="text-slate-800 font-medium hover:text-blue-800 transition-colors hover:cursor-pointer">
                 Makine ve Teçhizat
               </button>
             </div>

@@ -103,7 +103,7 @@ const handleNavigation = (path) => {
 
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-50 text-slate-900">
       {/* Hero Section */}
       <section className="relative py-32 px-4 overflow-hidden">
   {/* Video Arka Planı */}
@@ -121,10 +121,10 @@ const handleNavigation = (path) => {
   </div>
 
   {/* Gradient Arka Plan */}
-  <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20 z-10" />
+  <div className="absolute inset-0 bg-gradient-to-br from-white/90 to-slate-100/80 z-10" />
 
   {/* Koyu arka plan */}
-  <div className="absolute inset-0 bg-black opacity-40 z-20" />  {/* Koyu ve transparan katman */}
+  <div className="absolute inset-0 bg-white/35 z-20" />
 
   {/* İçerik */}
   <div className="relative z-30 max-w-6xl mx-auto">
@@ -133,22 +133,22 @@ const handleNavigation = (path) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
+      <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-blue-700">
         IPSS TECH
       </h1>
-      <p className="text-2xl text-gray-300 mb-8 max-w-3xl">
+      <p className="text-2xl text-slate-700 mb-8 max-w-3xl">
         Modern teknolojilerle işletmenizi geleceğe taşıyoruz. İnternet ve Altyapı, Sinyalizasyon ve Ağır Bakım, Makine ve Teçhizat alanlarında güçlü saha operasyonlarımızı; web yazılımları, görüntü işleme, robotik ve yapay zeka çözümleriyle entegre biçimde sunuyoruz.
       </p>
       <div className="flex gap-4">
         <a
           href="mailto:fix@ipsstech.com.tr"
-          className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+          className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-sky-500 text-white rounded-lg hover:shadow-lg hover:shadow-blue-300/40 transition-all"
         >
           İletişime Geç
         </a>
         <Link
           to="/internet-ve-altyapi"
-          className="inline-block px-8 py-4 border border-purple-500 rounded-lg hover:bg-purple-500/10 transition-all"
+          className="inline-block px-8 py-4 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-100 transition-all"
         >
           Saha Çözümlerimiz
         </Link>
@@ -158,9 +158,9 @@ const handleNavigation = (path) => {
 </section>
 
 
-      <section className="py-14 px-4 bg-gray-900/80 border-y border-gray-800">
+      <section className="py-14 px-4 bg-white border-y border-slate-200">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
+          <h2 className="text-3xl font-bold mb-8 text-center text-slate-800">
             Çalışma Ortaklarımız
           </h2>
           <div className="partner-marquee">
@@ -198,13 +198,13 @@ const handleNavigation = (path) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="p-8 rounded-2xl bg-gradient-to-r from-gray-800/70 to-gray-900/70 backdrop-blur-sm border border-gray-700 mb-10"
+            className="p-8 rounded-2xl bg-gradient-to-r from-white to-slate-100 border border-slate-200 mb-10 shadow-sm"
           >
-            <p className="text-sm uppercase tracking-wider text-purple-300 mb-3">Biz Kimiz?</p>
-            <p className="text-lg text-gray-200 leading-relaxed mb-4">
+            <p className="text-sm uppercase tracking-wider text-blue-600 mb-3">Biz Kimiz?</p>
+            <p className="text-lg text-slate-800 leading-relaxed mb-4">
               IPSS TECH olarak altyapı, sinyalizasyon, ağır bakım ve ileri teknoloji çözümlerini tek çatı altında sunan çok disiplinli bir mühendislik ve uygulama ekibiyiz.
             </p>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-slate-600 leading-relaxed">
               Saha operasyon gücümüzü yazılım ve yapay zeka kabiliyetiyle birleştirerek kurumların dijital dönüşüm, altyapı modernizasyonu ve operasyonel verimlilik hedeflerine doğrudan katkı sağlıyoruz.
             </p>
           </motion.div>
@@ -216,24 +216,24 @@ const handleNavigation = (path) => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-purple-500 transition-all"
+                className="p-6 rounded-xl bg-white border border-slate-200 hover:border-blue-300 transition-all shadow-sm"
               >
-                <h3 className="text-xl font-semibold mb-3 text-purple-300">{card.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{card.description}</p>
+                <h3 className="text-xl font-semibold mb-3 text-slate-800">{card.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{card.description}</p>
               </motion.div>
             ))}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl border border-gray-700 bg-gray-900/50">
-              <h3 className="text-xl font-semibold mb-3 text-purple-300">Misyonumuz</h3>
-              <p className="text-gray-300 leading-relaxed">
+            <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm">
+              <h3 className="text-xl font-semibold mb-3 text-slate-800">Misyonumuz</h3>
+              <p className="text-slate-600 leading-relaxed">
                 Yenilikçi, sürdürülebilir ve ölçülebilir teknoloji çözümleriyle iş süreçlerini iyileştirmek; kurumlara hız, verimlilik ve güven kazandırmak.
               </p>
             </div>
-            <div className="p-6 rounded-xl border border-gray-700 bg-gray-900/50">
-              <h3 className="text-xl font-semibold mb-3 text-purple-300">Vizyonumuz</h3>
-              <p className="text-gray-300 leading-relaxed">
+            <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm">
+              <h3 className="text-xl font-semibold mb-3 text-slate-800">Vizyonumuz</h3>
+              <p className="text-slate-600 leading-relaxed">
                 Türkiye’de saha operasyonları ve ileri teknoloji uygulamalarını entegre sunabilen öncü ve güvenilir çözüm markası olmak.
               </p>
             </div>
@@ -242,7 +242,7 @@ const handleNavigation = (path) => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-4 bg-gray-800/50">
+      <section className="py-20 px-4 bg-slate-100/80">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
             Hizmetlerimiz
@@ -255,18 +255,18 @@ const handleNavigation = (path) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="group p-6 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-purple-500 transition-all"
+                className="group p-6 rounded-xl bg-white border border-slate-200 hover:border-blue-300 transition-all shadow-sm"
               >
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-purple-400 transition-colors">
+                <h3 className="text-xl font-semibold mb-3 text-slate-800 group-hover:text-blue-700 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-400 mb-4">{service.description}</p>
+                <p className="text-slate-600 mb-4">{service.description}</p>
                 <button
                   onClick={() => { handleNavigation(service.link) }}
-                  className="inline-block hover:cursor-pointer px-4 py-2 border border-purple-500 rounded-lg hover:bg-purple-500/10 transition-all"
+                  className="inline-block hover:cursor-pointer px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-100 transition-all"
                 >
                   Detaylı Bilgi
                 </button>
@@ -281,14 +281,14 @@ const handleNavigation = (path) => {
           <h2 className="text-4xl font-bold mb-4 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
             Saha Performansımız
           </h2>
-          <p className="text-center text-gray-300 mb-12 max-w-3xl mx-auto">
+          <p className="text-center text-slate-600 mb-12 max-w-3xl mx-auto">
             Son dönem altyapı, bakım ve saha operasyon çalışmalarımızdan öne çıkan çıktılar.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {highlights.map((item, index) => (
-              <div key={index} className="p-5 rounded-xl border border-gray-700 bg-gray-800/50 text-center backdrop-blur-sm hover:border-purple-500 transition-all">
-                <p className="text-sm text-purple-300 mb-2">{item.label}</p>
-                <p className="text-3xl font-bold text-white">{item.value}</p>
+              <div key={index} className="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition-all shadow-sm">
+                <p className="text-sm text-slate-500 mb-2">{item.label}</p>
+                <p className="text-3xl font-bold text-slate-900">{item.value}</p>
               </div>
             ))}
           </div>
@@ -335,7 +335,7 @@ const handleNavigation = (path) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="group rounded-xl overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-purple-500 transition-all"
+                className="group rounded-xl overflow-hidden bg-white border border-slate-200 hover:border-blue-300 transition-all shadow-sm"
               >
                 <div className="relative h-64">
                   <img
@@ -343,15 +343,15 @@ const handleNavigation = (path) => {
                     alt={project.title}
                     className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <span className="inline-block px-3 py-1 text-sm bg-purple-500/20 text-purple-400 rounded-full mb-2">
+                    <span className="inline-block px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded-full mb-2">
                       {project.category}
                     </span>
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors">
+                    <h3 className="text-xl font-semibold mb-2 text-slate-900 group-hover:text-blue-700 transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-gray-300">{project.description}</p>
+                    <p className="text-slate-700">{project.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -361,17 +361,17 @@ const handleNavigation = (path) => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 bg-gray-800/50">
+      <section className="py-20 px-4 bg-slate-100/80">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
             Projelerinizi Hayata Geçirelim
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-slate-600 mb-8">
             İşletmeniz için özel yazılım çözümleri geliştirmek için bizimle iletişime geçin
           </p>
           <a
             href="mailto:fix@ipsstech.com.tr"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-sky-500 text-white rounded-lg hover:shadow-lg hover:shadow-blue-300/40 transition-all"
           >
             fix@ipsstech.com.tr
           </a>
